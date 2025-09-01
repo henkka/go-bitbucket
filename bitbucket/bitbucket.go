@@ -35,6 +35,7 @@ type Client struct {
 	Keys         *KeysService
 	Projects     *ProjectsService
 	Users        *UsersService
+	Groups       *GroupsService
 }
 
 type service struct {
@@ -181,6 +182,7 @@ func NewClient(baseURL string, httpClient *http.Client) (*Client, error) {
 	c.Keys = (*KeysService)(&c.common)
 	c.Projects = (*ProjectsService)(&c.common)
 	c.Users = (*UsersService)(&c.common)
+	c.Groups = (*GroupsService)(&c.common)
 	return c, nil
 }
 
